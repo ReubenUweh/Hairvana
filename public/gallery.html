@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Prestige Hair</title>
+    <meta name="description" content="Explore our stunning gallery of premium hair transformations, wigs, bundles, and styling work.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="../assets/fontawesome/css/all.min.css">
+    
+    <!-- AOS Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+        <link rel="stylesheet" href="../assets/css/style.css">
+
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <i class="fas fa-crown"></i>
+                    <span>Prestige Hair</span>
+                </div>
+                
+                <div class="nav-links">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="services.html" class="nav-link">Services</a>
+                    <a href="gallery.html" class="nav-link active">Gallery</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </div>
+                
+                <div class="nav-cta">
+                    <button class="btn btn-gold">Book Appointment</button>
+                </div>
+                
+                <div class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div class="mobile-menu" id="mobileMenu">
+                <a href="index.html" class="mobile-link">Home</a>
+                <a href="services.html" class="mobile-link">Services</a>
+                <a href="gallery.html" class="mobile-link">Gallery</a>
+                <a href="contact.html" class="mobile-link">Contact</a>
+                <button class="btn btn-gold mobile-cta">Book Appointment</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="page-header-content">
+                <h1 class="page-title">Gallery of Excellence</h1>
+                <p class="page-description">Discover the artistry and precision that defines our premium hair services</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Filters -->
+    <section class="gallery-filters">
+        <div class="container">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All Styles</button>
+                <button class="filter-btn" data-filter="wigs">Wigs</button>
+                <button class="filter-btn" data-filter="bundles">Bundles</button>
+                <button class="filter-btn" data-filter="frontals">Frontals</button>
+                <button class="filter-btn" data-filter="styled">Styled Hair</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Grid -->
+    <section class="gallery-section">
+        <div class="container">
+            <div class="gallery-grid-full" id="galleryGrid">
+                <!-- Wigs -->
+                <div class="gallery-item" data-category="wigs" data-aos="zoom-in">
+                    <img src="https://images.unsplash.com/photo-1594736797933-d0501ba2fe65?w=500&h=600&fit=crop" alt="Luxury Straight Wig">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <span class="gallery-badge">Wigs</span>
+                            <h4>Luxury Straight Wig</h4>
+                            <p>24-inch Brazilian virgin hair wig</p>
+                        </div>
+                        <button class="gallery-view-btn">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="wigs" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=500&h=600&fit=crop" alt="Deep Wave Wig">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <span class="gallery-badge">Wigs</span>
+                            <h4>Deep Wave Wig</h4>
+                            <p>26-inch Peruvian deep wave</p>
+                        </div>
+                        <button class="gallery-view-btn">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Bundles -->
+                <div class="gallery-item" data-category="bundles" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=500&h=600&fit=crop" alt="Body Wave Bundles">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <span class="gallery-badge">Bundles</span>
+                            <h4>Body Wave Bundles</h4>
+                            <p>3 bundles + closure set</p>
+                        </div>
+                        <button class="gallery-view-btn">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="bundles" data-aos="zoom-in" data-aos-delay="300">
+                    <img src="https://images.unsplash.com/photo-1505682634904-d7c8d95cdc50?w=500&h=600&fit=crop" alt="Curly Bundles">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <span class="gallery-badge">Bundles</span>
+                            <h4>Curly Bundles</h4>
+                            <p>Malaysian curly hair bundles</p>
+                        </div>
+                        <button class="gallery-view-btn">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Frontals -->
+                <div class="gallery-item" data-category="frontals" data-aos="zoom-in" data-aos-delay="400">
+                    <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=500&h=600&fit=crop" alt="HD Lace Frontal">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <span class="gallery-badge">Frontals</span>
+                            <h4>HD Lace Frontal</h4>
+                            <p>13x6 transparent lace frontal</p>
+                        </div>
+                        <button class="gallery-view-btn">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="frontals" data-aos="zoom-in" data-aos-delay="500">
+                    <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=500&h=600&fit=crop" alt="Closure Install">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <span class="gallery-badge">Frontals</span>
+                            <h4>Closure Install</h4>
+                            <p>4x4 lace closure installation</p>
+                        </div>
+                        <button class="gallery-view-btn">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Styled Hair -->
+                <div class="gallery-item" data-category="styled" data-aos="zoom-in" data-aos-delay="600">
+                    <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=500&h=600&fit=crop" alt="Prestige Curls">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <span class="gallery-badge">Styled Hair</span>
+                            <h4>Prestige Curls</h4>
+                            <p>Custom styled curly installation</p>
+                        </div>
+                        <button class="gallery-view-btn">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="styled" data-aos="zoom-in" data-aos-delay="700">
+                    <img src="https://images.unsplash.com/photo-1529651737248-dad5e287768e?w=500&h=600&fit=crop" alt="Elegant Updo">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <span class="gallery-badge">Styled Hair</span>
+                            <h4>Elegant Updo</h4>
+                            <p>Special occasion styling</p>
+                        </div>
+                        <button class="gallery-view-btn">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="wigs" data-aos="zoom-in" data-aos-delay="800">
+                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=500&h=600&fit=crop" alt="Bob Wig">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <span class="gallery-badge">Wigs</span>
+                            <h4>Bob Wig</h4>
+                            <p>Short bob lace front wig</p>
+                        </div>
+                        <button class="gallery-view-btn">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="styled" data-aos="zoom-in" data-aos-delay="900">
+                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=500&h=600&fit=crop" alt="Beach Waves">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <span class="gallery-badge">Styled Hair</span>
+                            <h4>Beach Waves</h4>
+                            <p>Natural beach wave styling</p>
+                        </div>
+                        <button class="gallery-view-btn">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="bundles" data-aos="zoom-in" data-aos-delay="1000">
+                    <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=500&h=600&fit=crop" alt="Straight Bundles">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <span class="gallery-badge">Bundles</span>
+                            <h4>Straight Bundles</h4>
+                            <p>Silky straight hair bundles</p>
+                        </div>
+                        <button class="gallery-view-btn">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="wigs" data-aos="zoom-in" data-aos-delay="1100">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=500&h=600&fit=crop" alt="Colored Wig">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <span class="gallery-badge">Wigs</span>
+                            <h4>Colored Wig</h4>
+                            <p>Custom colored lace front wig</p>
+                        </div>
+                        <button class="gallery-view-btn">
+                            <i class="fas fa-expand"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Client Transformations</h2>
+                <p class="section-description">See what our satisfied clients have to say about their hair journey</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card" data-aos="fade-up">
+                    <div class="testimonial-content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"Absolutely amazing! The quality exceeded my expectations. I've received so many compliments!"</p>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b588?w=100&h=100&fit=crop&crop=face" alt="Jasmine Williams">
+                            <div>
+                                <h4>Jasmine Williams</h4>
+                                <span>Atlanta, GA</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="testimonial-content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"Top-notch quality! I've had them for 6 months and they still look amazing. Will definitely order again!"</p>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=100&h=100&fit=crop&crop=face" alt="Keisha Johnson">
+                            <div>
+                                <h4>Keisha Johnson</h4>
+                                <span>Houston, TX</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="testimonial-content">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"From consultation to final install, everything was perfect! I feel so confident and beautiful!"</p>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop&crop=face" alt="Alicia Davis">
+                            <div>
+                                <h4>Alicia Davis</h4>
+                                <span>Miami, FL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Join Our Gallery?</h2>
+                <p>Book your consultation and become our next success story</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-gold">Book Consultation</a>
+                    <button class="btn btn-hero">
+                        <i class="fab fa-whatsapp"></i>
+                        Chat on WhatsApp
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <i class="fas fa-crown"></i>
+                        <span>Prestige Hair</span>
+                    </div>
+                    <p>Redefining hair confidence with premium wigs, bundles, frontals, and custom styling services.</p>
+                    
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Services</h4>
+                        <ul>
+                            <li><a href="services.html">Premium Wigs</a></li>
+                            <li><a href="services.html">Hair Bundles</a></li>
+                            <li><a href="services.html">Lace Frontals</a></li>
+                            <li><a href="services.html">Hair Care</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="contact.html">Book Appointment</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Contact Info</h4>
+                        <ul>
+                            <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                            <li><i class="fas fa-envelope"></i> hello@prestigehair.com</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Atlanta, GA</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Prestige Hair. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- AOS Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 600,
+            easing: 'ease-out-cubic',
+            once: true
+        });
+    </script>
+
+    <!-- Custom JavaScript -->
+     <script src="../assets/js/index.js"></script>
+    <script src="../assets/js/scroll-animation.js"></script>
+</body>
+</html>
