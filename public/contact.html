@@ -84,7 +84,7 @@
                 <!-- Contact Form -->
                 <div class="contact-form-container" data-aos="fade-up">
                     <h2>Send us a Message</h2>
-                    <form class="contact-form" id="contactForm" method="post" action="../mail/contact.php">
+                    <form class="contact-form" id="contactForm" method="post" action="contact.php">
                         <div class="form-row">
                             <div class="form-group">
                                 <input type="text" name="name" placeholder="Your Name" required />
@@ -104,7 +104,8 @@
                                 required></textarea>
                         </div>
 
-                        <button type="submit" class="btn btn-luxury btn-full">
+                        <button type="submit" class="btn btn-luxury btn-full" onclick="sendEmail()"
+                            value="Send An Email">
                             Send Message
                         </button>
                     </form>
@@ -398,6 +399,46 @@
     <!-- Custom JavaScript -->
     <script src="../assets/js/index.js"></script>
     <script src="../assets/js/scroll-animation.js"></script>
+    <script>
+        function sendEmail() {
+            let name = $("#name");
+            let email = $("#email");
+            let phone = $("#phone");
+            let body = $("#body");
+
+            if (
+                isNotEmpty(name) &&
+                isNotEmpty(email) &&
+                isNotEmpty(phone) &&
+                isNotEmpty(body)
+            ) {
+                $.ajax({
+                    url: "contact.php",
+                    method: "POST",
+                    dataType: "json",
+                    data: {
+                        name: name.val(),
+                        email: email.val(),
+                        phone: phone.val(),
+                        body: body.val(),
+                    },
+                    success: function (response) {
+                        $("#myForm")[0].reset();
+                        $(".sent-notification").text("Message Sent Successfully.");
+                    },
+                });
+            }
+        }
+
+        function isNotEmpty(caller) {
+            if (caller.val() == "") {
+                caller.css("border", "1px solid red");
+                return false;
+            } else caller.css("border", "");
+
+            return true;
+        }
+    </script>
 </body>
 
 </html>
