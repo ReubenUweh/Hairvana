@@ -62,25 +62,25 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Contact form submission
-  const contactForm = document.getElementById("contactForm");
-  if (contactForm) {
-    contactForm.addEventListener("submit", function (e) {
-      e.preventDefault();
+  // const contactForm = document.getElementById("contactForm");
+  // if (contactForm) {
+  //   contactForm.addEventListener("submit", function (e) {
+  //     e.preventDefault();
 
-      // Get form data
-      const formData = new FormData(this);
-      const data = Object.fromEntries(formData);
+  //     // Get form data
+  //     const formData = new FormData(this);
+  //     const data = Object.fromEntries(formData);
 
-      // Here you would typically send the data to your server
-      console.log("Form submitted:", data);
+  //     // Here you would typically send the data to your server
+  //     console.log("Form submitted:", data);
 
-      // Show success message (you can customize this)
-      alert("Thank you for your message! We will get back to you soon.");
+  //     // Show success message (you can customize this)
+  //     alert("Thank you for your message! We will get back to you soon.");
 
-      // Reset form
-      this.reset();
-    });
-  }
+  //     // Reset form
+  //     this.reset();
+  //   });
+  // }
 
   // Smooth scrolling for anchor links
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
