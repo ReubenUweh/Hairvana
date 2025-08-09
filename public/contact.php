@@ -1,51 +1,54 @@
+<pre>
 <?php
-// use PHPMailer\PHPMailer\PHPMailer;
+require_once "../env.php";
+require_once "../phpMailer/src/PHPMailer.php";
+require_once "../phpMailer/src/SMTP.php";
 
-if(isset($_POST['name']) && isset($_POST['email'])){
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $phone = $_POST['phone'];
-    // $subject = $_POST['subject'];
-    $body = $_POST['message'];
+function sendEmail($name, $email, $body)
+{
 
-    require_once "../phpMailer/src/PHPMailer.php";
-    require_once "../phpMailer/src/SMTP.php";
-    // require_once "../phpMailer/src/Exception.php";
+    $host = EMAIL_HOST;
+    $username = EMAIL_USERNAME;
+    $password = EMAIL_PASSWORD;
+    $port = EMAIL_PORT;
 
-    $mail = new PHPMailer();
-    //Server settings
-    $host = "smtp-reuben-uweh.alwaysdata.net";
-    $username = "reuben-uweh@alwaysdata.net";
-    $password = "Rairai206";
-    $port = "465"; // or 587 for TLS
+    $mail = new PHPMailer(true);
+    try {
+        //Server settings
+        $mail->SMTPDebug = SMTP::DEBUG_OFF;                      //Enable verbose debug output
+        $mail->isSMTP();                                            //Send using SMTP
+        $mail->Host       = $host;                     //Set the SMTP server to send through
+        $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+        $mail->Username   = $username;                     //SMTP username
+        $mail->Password   = $password;                               //SMTP password
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;           //Enable implicit TLS encryption
+        $mail->Port       = $port;                                    //TCP port to connect to; use 587 if you have set SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS
 
-    //smtp settings
-    $mail->isSMTP();
-    $mail->Host = $host;
-    $mail->SMTPAuth = true;
-    $mail->Username = $username;
-    $mail->Password = $password;
-    $mail->Port = $port;
-    $mail->SMTPSecure = "ssl";
+        //Recipients
+        $mail->setFrom(EMAIL_USERNAME, 'Hairvana');
+        $mail->addAddress("joj573466@gmail.com", 'Joe User');
 
-    //email settings
-    $mail->isHTML(true);
-    $mail->setFrom($email, $name);
-    $mail->addAddress("reubenjunior34@gmail.com"); #sales@hairvanabyHoR.com
-    // $mail->Subject = ("$email ($subject)");
-    $mail->Body = $body;
+        //Content
+        $mail->isHTML(true);                                  //Set email format to HTML
+        $mail->Subject = "New Message";
+        $mail->Body    = $body;
+        $mail->AltBody = strip_tags($body);
 
-    if($mail->send()){
-        $status = "success";
-        $response = "Email is sent!";
+        $mail->send();
+        echo 'Message has been sent';
+    } catch (Exception $e) {
+        echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+        return header("location:index.html");
     }
-    else
-    {
-        $status = "failed";
-        $response = "Something is wrong: <br>" . $mail->ErrorInfo;
-    }
-
-    exit(json_encode(array("status" => $status, "response" => $response)));
 }
+
+$name = $_POST['name'];
+$email = $_POST['email'];
+$phone = $_POST['phone'];
+$message = $_POST['message'];
+
+$body = "<h3 class='' style='text-align: left;'>$name&nbsp;</h3><p style='text-align: left;'><br></p><p style='text-align: left;'>Hey hairvana,</p><p style='text-align: center;'>$message</p><p style='text-align: left;'>My Phone Number: $phone.</p><p style='text-align: left;>My Email: $email.</p><p style='text-align: left;'>Thanks.</p><p style='text-align: left;'><br></p><p style='text-align: center;'><br></p><p style='text-align: center;'><br></p>";
+
+sendEmail($name, $email, $body)
 
 ?>
