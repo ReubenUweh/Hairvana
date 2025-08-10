@@ -207,11 +207,6 @@ h6 {
     color: var(--foreground);
 }
 
-.logo i {
-    color: var(--gold);
-    font-size: 2rem;
-}
-
 .nav-links {
     display: none;
     align-items: center;
