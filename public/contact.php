@@ -1,16 +1,16 @@
+<pre>
 <?php
-// use PHPMailer\PHPMailer\PHPMailer;
+require_once "../env.php";
+require_once "../phpMailer/src/PHPMailer.php";
+require_once "../phpMailer/src/SMTP.php";
 
-if(isset($_POST['name']) && isset($_POST['email'])){
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $phone = $_POST['phone'];
-    // $subject = $_POST['subject'];
-    $body = $_POST['message'];
+function sendEmail($name, $email, $body)
+{
 
-    require_once "../phpMailer/src/PHPMailer.php";
-    require_once "../phpMailer/src/SMTP.php";
-    // require_once "../phpMailer/src/Exception.php";
+    $host = EMAIL_HOST;
+    $username = EMAIL_USERNAME;
+    $password = EMAIL_PASSWORD;
+    $port = EMAIL_PORT;
 
     $mail = new PHPMailer();
     //Server settings
@@ -31,7 +31,7 @@ if(isset($_POST['name']) && isset($_POST['email'])){
     //email settings
     $mail->isHTML(true);
     $mail->setFrom($email, $name);
-    $mail->addAddress("streamclips034@gmail.com"); #sales@hairvanabyHoR.com
+    $mail->addAddress("reubenjunior34@gmail.com"); #sales@hairvanabyHoR.com
     // $mail->Subject = ("$email ($subject)");
     $mail->Body = $body;
 
