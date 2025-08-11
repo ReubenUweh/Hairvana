@@ -207,6 +207,12 @@ h6 {
     color: var(--foreground);
 }
 
+.logo img{
+    width: 70px;
+    position: relative;
+    margin-top: -10px;
+}
+
 .nav-links {
     display: none;
     align-items: center;

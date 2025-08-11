@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin – Prestige Hair Content Manager</title>
+  <meta name="description" content="No‑code admin dashboard to edit hero, services, gallery, testimonials and contact content for Prestige Hair." />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="canonical" href="../admin/admin.html" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Icons -->
+  <link rel="stylesheet" href="../assets/fontawesome/css/all.min.css">
+  <!-- Styles -->
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/admin.css" />
+</head>
+<body>
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <div class="nav-content">
+        <div class="logo"><i class="fas fa-crown"></i><span>hairvanabyHoR</span></div>
+        <div class="nav-links">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="services.html" class="nav-link">Services</a>
+          <a href="gallery.html" class="nav-link">Gallery</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+        </div>
+        <div class="nav-cta">
+          <span class="badge-admin"><i class="fas fa-shield-alt"></i> Admin</span>
+        </div>
+        <div class="mobile-menu-toggle" id="mobileMenuToggle">
+          <i class="fas fa-bars"></i>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="admin">
+    <div class="container">
+      <header class="admin-header">
+        <h1>Content Manager</h1>
+        <div class="admin-actions">
+          <button id="logoutBtn" class="btn btn-outline"><i class="fas fa-sign-out-alt"></i> Lock</button>
+          <button id="clearAllBtn" class="btn btn-outline"><i class="fas fa-trash"></i> Clear All Content</button>
+        </div>
+      </header>
+
+      <section class="admin-grid">
+        <aside class="admin-sidebar">
+          <button class="admin-tab active" data-tab="hero"><i class="fas fa-image"></i> Hero</button>
+          <button class="admin-tab" data-tab="services"><i class="fas fa-scissors"></i> Services</button>
+          <button class="admin-tab" data-tab="gallery"><i class="fas fa-camera"></i> Gallery</button>
+          <button class="admin-tab" data-tab="testimonials"><i class="fas fa-star"></i> Testimonials</button>
+          <button class="admin-tab" data-tab="contact"><i class="fas fa-address-book"></i> Contact</button>
+          <button class="admin-tab" data-tab="settings"><i class="fas fa-cog"></i> Settings</button>
+        </aside>
+
+        <section class="admin-content">
+          <!-- HERO -->
+          <div class="admin-panel active" id="tab-hero">
+            <h2>Hero Section</h2>
+            <div class="card-form">
+              <label>Title</label>
+              <input type="text" id="heroTitle" placeholder="The Standard of Perfection" />
+              <label>Description</label>
+              <textarea id="heroDescription" rows="3" placeholder="Redefining Hair Confidence..."></textarea>
+              <label>Background Image</label>
+              <div class="uploader" id="heroImageDrop">
+                <input type="file" accept="image/*" id="heroImageInput" />
+                <p>Drag & drop or click to upload</p>
+              </div>
+              <div class="preview"><img id="heroImagePreview" alt="Hero Preview" /></div>
+              <div class="form-actions">
+                <button id="saveHero" class="btn btn-gold"><i class="fas fa-save"></i> Save Hero</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- SERVICES -->
+          <div class="admin-panel" id="tab-services">
+            <h2>Services Overview</h2>
+            <div id="servicesList" class="repeater"></div>
+            <div class="form-actions">
+              <button id="saveServices" class="btn btn-gold"><i class="fas fa-save"></i> Save Services</button>
+            </div>
+          </div>
+
+          <!-- GALLERY -->
+          <div class="admin-panel" id="tab-gallery">
+            <h2>Gallery Items</h2>
+            <div class="uploader" id="galleryDrop">
+              <input type="file" accept="image/*" id="galleryInput" multiple />
+              <p>Drag & drop multiple images or click to upload</p>
+            </div>
+            <div class="gallery-controls">
+              <label>Category</label>
+              <select id="galleryCategory">
+                <option value="wigs">Wigs</option>
+                <option value="bundles">Bundles</option>
+                <option value="frontals">Frontals</option>
+                <option value="styled">Styled Hair</option>
+              </select>
+            </div>
+            <div id="galleryItems" class="gallery-admin-grid"></div>
+            <div class="form-actions">
+              <button id="saveGallery" class="btn btn-gold"><i class="fas fa-save"></i> Save Gallery</button>
+            </div>
+          </div>
+
+          <!-- TESTIMONIALS -->
+          <div class="admin-panel" id="tab-testimonials">
+            <h2>Testimonials</h2>
+            <div class="testimonial-form">
+              <input id="tName" placeholder="Name" />
+              <input id="tLocation" placeholder="Location (optional)" />
+              <input id="tStars" type="number" min="1" max="5" value="5" />
+              <textarea id="tText" rows="3" placeholder="Short feedback message..."></textarea>
+              <div class="uploader small" id="tAvatarDrop">
+                <input type="file" accept="image/*" id="tAvatarInput" />
+                <p>Upload avatar (optional)</p>
+              </div>
+              <button id="addTestimonial" class="btn btn-outline"><i class="fas fa-plus"></i> Add</button>
+            </div>
+            <div id="testimonialsList" class="list"></div>
+            <div class="form-actions">
+              <button id="saveTestimonials" class="btn btn-gold"><i class="fas fa-save"></i> Save Testimonials</button>
+            </div>
+          </div>
+
+          <!-- CONTACT -->
+          <div class="admin-panel" id="tab-contact">
+            <h2>Contact Info</h2>
+            <div class="grid-2">
+              <div class="card-form">
+                <label>Phone</label>
+                <input id="cPhone" placeholder="+1 (555) 123-4567" />
+                <label>WhatsApp</label>
+                <input id="cWhats" placeholder="+1 (555) 123-4567" />
+                <label>Email</label>
+                <input id="cEmail" placeholder="hello@prestigehair.com" />
+                <label>Address</label>
+                <input id="cAddress" placeholder="123 Beauty Blvd, Atlanta, GA" />
+              </div>
+              <div class="card-form">
+                <h3>Preview</h3>
+                <ul class="contact-preview">
+                  <li><i class="fas fa-phone"></i> <span id="prevPhone"></span></li>
+                  <li><i class="fab fa-whatsapp"></i> <span id="prevWhats"></span></li>
+                  <li><i class="fas fa-envelope"></i> <span id="prevEmail"></span></li>
+                  <li><i class="fas fa-map-marker-alt"></i> <span id="prevAddress"></span></li>
+                </ul>
+              </div>
+            </div>
+            <div class="form-actions">
+              <button id="saveContact" class="btn btn-gold"><i class="fas fa-save"></i> Save Contact</button>
+            </div>
+          </div>
+
+          <!-- SETTINGS -->
+          <div class="admin-panel" id="tab-settings">
+            <h2>Settings</h2>
+            <div class="card-form">
+              <label>Change Access Code</label>
+              <input id="newPass" type="password" placeholder="New access code" />
+              <button id="savePass" class="btn btn-outline"><i class="fas fa-key"></i> Update Code</button>
+            </div>
+          </div>
+        </section>
+        <aside class="admin-preview">
+          <div class="preview-controls">
+            <label for="previewSelect">Preview page</label>
+            <select id="previewSelect">
+              <option value="../public/index.html">Home</option>
+              <option value="../public/services.html">Services</option>
+              <option value="../public/gallery.html">Gallery</option>
+              <option value="../public/contact.html">Contact</option>
+            </select>
+            <label class="toggle">
+              <input type="checkbox" id="autoRefresh" checked />
+              Auto refresh
+            </label>
+            <button id="refreshPreview" class="btn btn-outline"><i class="fas fa-rotate-right"></i> Refresh</button>
+          </div>
+          <iframe id="previewFrame" title="Live preview"></iframe>
+        </aside>
+      </section>
+    </div>
+  </main>
+
+  <!-- Simple Lock Screen -->
+  <div id="lockScreen" class="lock-screen">
+    <div class="lock-card">
+      <h2><i class="fas fa-lock"></i> Admin Access</h2>
+      <p>Enter your access code to continue</p>
+      <input id="passInput" type="password" placeholder="Access code" />
+      <button id="unlockBtn" class="btn btn-gold"><i class="fas fa-unlock"></i> Unlock</button>
+    </div>
+  </div>
+
+  <script src="../assets/js/index.js"></script>
+  <script src="../assets/js/admin.js"></script>
+</body>
+</html>
