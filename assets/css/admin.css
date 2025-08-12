@@ -123,13 +123,42 @@
     color: var(--foreground);
     outline: none;
     transition: var(--transition-smooth);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+.card-form input::placeholder,
+.card-form textarea::placeholder {
+    color: var(--muted-foreground);
+    opacity: .8;
+}
+
+.card-form input:hover,
+.card-form textarea:hover,
+.card-form select:hover {
+    border-color: var(--muted);
 }
 
 .card-form input:focus,
 .card-form textarea:focus,
 .card-form select:focus {
     border-color: var(--ring);
-    box-shadow: 0 0 0 3px hsla(320, 65%, 55%, 0.25);
+    box-shadow: 0 0 0 3px hsla(320, 65%, 55%, 0.25), 0 0 0 1px hsl(var(--ring) / 0.2) inset;
+}
+
+.card-form .char-count {
+    display: flex;
+    justify-content: flex-end;
+    font-size: .75rem;
+    color: var(--muted-foreground);
+    margin-top: .25rem;
+}
+
+.card-form .char-count.warn {
+    color: var(--gold);
+}
+
+.card-form .char-count.error {
+    color: var(--destructive);
 }
 
 .form-actions {
@@ -270,6 +299,38 @@
     color: var(--gold);
 }
 
+/* Star rating (testimonials form) */
+input#tStars {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+}
+
+.rating {
+    display: flex;
+    gap: .25rem;
+    align-items: center;
+}
+
+.rating .star {
+    font-size: 1.125rem;
+    color: var(--muted-foreground);
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.rating .star.active {
+    color: var(--gold);
+    text-shadow: var(--glow-gold);
+    transform: translateY(-1px);
+}
+
+.rating .star:hover {
+    transform: scale(1.05);
+}
+
 /* Contact preview */
 .grid-2 {
     display: grid;
@@ -288,6 +349,30 @@
     align-items: center;
     gap: .5rem;
     color: var(--muted-foreground);
+}
+
+/* inputs */
+* input{
+    padding: 13px;
+    border-radius: 7px;
+    backdrop-filter: blur(15px);
+    background-color: rgba(0, 0, 0, 0.153);
+    color: #fff;
+}
+
+* textarea{
+    padding: 5px;
+    border-radius: 7px;
+    backdrop-filter: blur(15px);
+    background-color: rgba(0, 0, 0, 0.153);
+    color: #fff;
+}
+
+* select{
+    border-radius: 7px;
+    backdrop-filter: blur(15px);
+    background-color: rgba(0, 0, 0, 0.861);
+    color: #fff;
 }
 
 /* Preview panel */
